@@ -1,0 +1,26 @@
+{
+  "name": "GraphQl-Apollo",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridhampansuriya2000/GraphQl-Apollo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ridhampansuriya2000/GraphQl-Apollo/issues"
+  },
+  "homepage": "https://github.com/ridhampansuriya2000/GraphQl-Apollo#readme",
+  "dependencies": {
+    "apollo-server": "^3.5.0",
+    "apollo-server-core": "^3.5.0",
+    "graphql": "^15.7.2"
+  }
+}

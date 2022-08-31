@@ -5,29 +5,37 @@ import {ApolloServerPluginLandingPageGraphQLPlayground} from "apollo-server-core
 import {quotes,users} from "./fakedb.js"
 
 const typeDefs = gql`
-type Query{
-        users : [User]
-        quotes : [Quote]
+        type Query{
+            users : [User]
+            user(id:ID!) : User
+            quotes : [Quote]
+            iquote(by:ID!):[Quote]
         }
         
         type User{
-        id : ID
-        firstName:String
-        lastName:String
-        email:String 
-        password:String
+            id : ID
+            firstName:String
+            lastName:String
+            email:String 
+            password:String
+            quotes:[Quote]
         }
         
         type Quote{
-        name : String
-        by: ID
+            name : String
+            by: ID
         }
 `
 
 const resolvers = {
     Query:{
             users: ()=>users,
-            quotes: ()=>quotes
+            user: (_,args)=>users.find(user => user.id == args.id),
+            quotes: ()=>quotes,
+            iquote: (_,args)=> quotes.filter(quote => quote.by == args.by)
+    },
+    User:{
+        quotes: (ur)=> quotes.filter(quote=> quote.by == ur.id)
     }
 }
 

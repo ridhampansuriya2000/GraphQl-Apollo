@@ -10,3 +10,70 @@ type Query{
         password:StringgetAll
         }
 
+
+query getAllQuates{
+  quotes{
+    name
+    by
+  }
+}
+
+
+query getAllUsers{
+  users{
+    id
+    firstName
+    password
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+
+
+query getUserByID{
+  user(id:"23131"){
+    id
+    firstName
+    lastName
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+query getUserByID($userid:ID!){
+  user(id:$userid){
+    id
+    firstName
+    lastName
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+
+---------------------------------
+
+query getQuoteByUser{
+  iquote(by:23131){
+    name
+    by
+  }
+}
+
+query getQuoteByUser($quoteby:ID!){
+  iquote(by:$quoteby){
+    name
+    by
+  }
+}
+
+-----------------Variables-------------------
+

@@ -75,5 +75,14 @@ query getQuoteByUser($quoteby:ID!){
   }
 }
 
------------------Variables-------------------
+------------------------  mutation  -----------------------------
 
+mutation createUser($userNew:UserInput!){
+  user:signupUserDummy(userNew:$userNew){
+    id
+    firstName
+    lastName
+    email
+    password
+  }
+}

@@ -86,3 +86,13 @@ mutation createUser($userNew:UserInput!){
     password
   }
 }
+
+Query variable :
+{
+  "userNew" :{
+    "firstName":"Harsh",
+    "lastName":"Thoriya",
+    "email":"abc@abc.com",
+    "password":"12345"
+  }
+}

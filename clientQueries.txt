@@ -3,7 +3,7 @@ type Query{
         }
 
         type User{
-        id : ID
+        _id : ID
         firstName:String
         lastName:String
         email:String
@@ -21,7 +21,7 @@ query getAllQuates{
 
 query getAllUsers{
   users{
-    id
+    _id
     firstName
     password
     quotes{
@@ -34,8 +34,8 @@ query getAllUsers{
 
 
 query getUserByID{
-  user(id:"23131"){
-    id
+  user(_id:"23131"){
+    _id
     firstName
     lastName
     email
@@ -47,8 +47,8 @@ query getUserByID{
 }
 
 query getUserByID($userid:ID!){
-  user(id:$userid){
-    id
+  user(_id:$userid){
+    _id
     firstName
     lastName
     email
@@ -79,7 +79,7 @@ query getQuoteByUser($quoteby:ID!){
 
 mutation createUser($userNew:UserInput!){
   user:signupUserDummy(userNew:$userNew){
-    id
+    _id
     firstName
     lastName
     email
